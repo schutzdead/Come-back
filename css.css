@@ -34,7 +34,7 @@ h1{
     margin-bottom: 80px ;
 }
 
-#play{
+#play, #play1{
     color: white;
     background-color: #3882F6;
     border: none;
@@ -47,7 +47,7 @@ h1{
 #only {
     height:auto;
     width: 40px;
-    visibility: hidden;
+    display:none;
 }
 
 #general{
@@ -131,4 +131,34 @@ h1{
     font-size: 60px;
     color : #1F2937;
     font-weight: 900;
+}
+
+#name {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50vh;
+    transform: translateY(-75%);
+}
+
+#button_name{
+    color: white;
+    background-color: #3882F6;
+    border: none;
+    border-radius: 8px;
+    padding :0.5em;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#input_name{
+    border: #ca5352 2px solid;
+    border-radius: 8px;
+    padding : 0.5em;
+    width: 200px;
+}
+
+#play1{
+    display: none;
 }

@@ -8,12 +8,18 @@
     <title>Come back</title>
 </head>
 <body>
+    <div id="name">   
+        <input id=input_name maxlength="15" placeholder="Quel est ton prénom camarade ?" autocomplete="off">
+        <button id=button_name>Confirmer</button>
+    </div>
+    <div id='full_body'>
     <div id='entete'>
     <h1 id="titre">Pierre-Feuille-Ciseaux</h1>
     <div>Un de plus qui va échouer...</div>
     </div>
     <div id="buttons">
         <button id="play">Jouer</button>
+        <button id="play1">Jouer</button>
         <img src="effacer.png" alt="cancel" id="only">
     </div>
     <div id="final_text">COMPUTER</div>
@@ -33,7 +39,7 @@
         <div id="right">
             <div id="players">
                 <div id="player_one">
-                    <div>Toi</div>
+                    <div id="player_name">Toi</div>
                     <img id="fighter1" src="toilet-paper.png" alt="">
                 </div>
                 <div id="computer">
@@ -43,6 +49,7 @@
             </div>
             <div id="score">0 - 0</div>
         </div>
+    </div>
     </div>
     <script type="text/javascript" src="js.js"></script>
 </body>

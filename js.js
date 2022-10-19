@@ -1,3 +1,10 @@
+const nameChoice = document.getElementById('name');
+const button1 = document.getElementById('play1');
+const fullbody = document.getElementById('full_body');
+const buttonName = document.getElementById('button_name');
+const inputName = document.getElementById('input_name');
+const text_weapons = document.getElementById('choose_text')
+const player_name = document.getElementById('player_name')
 const button = document.getElementById('play');
 const general = document.getElementById('general');
 const cancel = document.getElementById('only');
@@ -16,11 +23,13 @@ const body = document.body;
 let round_number = 1;
 let player_score = 0;
 let computer_score = 0;
+var prenom = ""
+
 
 // OPTIMISATION
 function switch_visu (prop1, prop2){
     general.style.display = prop1;
-    button.textContent = prop2;
+    button1.textContent = prop2;
 }
 
 function visu_p (prop) {
@@ -28,13 +37,42 @@ function visu_p (prop) {
     computer.style.visibility = prop;
 }
 
-// FAIRE EVOLUER LA PARTIE
+function visu_body (prop3, prop4){
+    fullbody.style.display = prop3;
+    nameChoice.style.display = prop4;
+}
+
+function manche (){
+    switch_visu("flex", `Manche ${round_number}`);
+    all_weapons.style.visibility = "visible";
+    visu_p ("hidden")
+    titre.style.visibility = 'hidden';
+    cancel.style.display = 'unset';
+}
+
+// BOUTONS + FAIRE EVOLUER LA PARTIE
+
 button.addEventListener('click', () => {
-        switch_visu("flex", `Manche ${round_number}`);
-        all_weapons.style.visibility = "visible";
-        visu_p ("hidden")
-        titre.style.visibility = 'hidden';
-        cancel.style.visibility = 'visible'
+    visu_body('none', 'flex');
+})
+
+buttonName.addEventListener('click', () => {
+    prenom = inputName.value;
+    console.log(prenom)
+    if (prenom===''){
+        buttonName.textContent='Met ton putain de prénom !';
+    } else {
+    visu_body('contents', 'none');
+    button.style.display='none';
+    button1.style.display='unset';
+    manche()
+    text_weapons.textContent = `Allé ${prenom}, on choisit son arme bordel !`
+    player_name.textContent = `${prenom}`
+}
+})
+
+button1.addEventListener('click', () => {
+    manche()
 })
 
 // STOPPER LE JEU
@@ -83,14 +121,14 @@ score.textContent = `${player_score} - ${computer_score}`
 
 function next_round(){
     all_weapons.style.visibility = "hidden";
-    button.textContent = 'Tour suivant';
+    button1.textContent = 'Tour suivant';
 }
 
 function end(){
     if (player_score === 3){
-        style_end('none', 'flex', `Félicitation, tu l'as vaincu !`)
+        style_end('none', 'flex', `Félicitation ${prenom}, tu l'as vaincu !`)
     } else if (computer_score === 3) {
-        style_end('none', 'flex', `Vous n'êtes pas fait pour ce job.`)
+        style_end('none', 'flex', `Je le savais, tu n'es pas fait pour ce job.`)
     }
 }
 
@@ -115,7 +153,7 @@ function style_end (gene_disp, text_disp, text){
     final_text.style.display = text_disp;
     final_text.textContent = text;
     cancel.style.display = 'none';
-    button.addEventListener('click', () => {
+    button1.addEventListener('click', () => {
         body.style.display='none'
         location.reload();
     })
