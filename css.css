@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    padding : 0px;
+    margin : 0px;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+}
+
+img{
+    height : auto;
+    width: 90px;
+}
+
+#entete{
+    margin : 50px;
+    text-align: center;
+    color : #1F2937;
+    line-height: 40px;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#buttons{
+    display: flex;
+    gap : 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px ;
+}
+
+#play{
+    color: white;
+    background-color: #3882F6;
+    border: none;
+    border-radius: 8px;
+    padding :0.5em;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+#only {
+    height:auto;
+    width: 40px;
+    visibility: hidden;
+}
+
+#general{
+    display: none;
+    justify-content: center;
+    column-gap: 40px;
+}
+
+#left{
+    width:400px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+#choose_text{
+    color: #1F2937;
+    padding :0.5em;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+#card, #card2, #card3 {
+    border: 3px solid #3882F6 ;
+    padding : 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 10px;
+    color: #1F2937;
+    font-size: 18px;
+}
+
+#right {
+    background-color: #2e2e2e;
+    border: 15px dashed #ca5352;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+#players {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    visibility: hidden;
+}
+
+#player_one, #computer {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    gap: 50px;
+}
+
+#score {
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+#fighter1, #fighter2{
+    width: 150px;
+    height: auto;
+}
+
+#final_text{
+    display:none;
+    justify-content: center;
+    margin-top: 200px;
+    font-size: 60px;
+    color : #1F2937;
+    font-weight: 900;
+}
