@@ -158,3 +158,5 @@ function style_end (gene_disp, text_disp, text){
         location.reload();
     })
 }
+
+// TOUT EST PARFAIT, DONC TEST DIRECT DU MERGE GIT
